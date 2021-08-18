@@ -1,3 +1,4 @@
+detail:
 1. command: npm start
 2. create-react-app
 3. react 17
