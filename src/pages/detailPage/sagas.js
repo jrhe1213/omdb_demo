@@ -16,10 +16,6 @@ function* fetchOMDBDetailSaga(action) {
       "i": action.payload.input
     }
     const response = yield call(api.fetchOMDBDetail, params)
-
-    console.log("params: ", params)
-    console.log("response: ", response)
-
     if (response.Data) {
       if (response.Data.Response == "True") {
         yield put(actions.fetchOMDBDetailSuccess(response.Data))
