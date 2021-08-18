@@ -1,16 +1,32 @@
 import constants from "./constants"
 
 const initialState = {
-  demo2: []
+  isloading: true,
+  omdb: {},
+  error: null
 }
 
 export default (state = initialState, action) => {
 
   switch (action.type) {
-    case "1234":
+    case constants.FETCH_OMDB_DETAIL:
       return {
         ...state,
-        demo2: ["1234"]
+        isloading: true,
+      }
+
+    case constants.FETCH_OMDB_DETAIL__SUCCESS:
+      return {
+        ...state,
+        omdb: action.payload.response,
+        isloading: false,
+      }
+
+    case constants.FETCH_OMDB_DETAIL__ERROR:
+      return {
+        ...state,
+        isloading: false,
+        error: action.payload.error
       }
 
     default:

@@ -1,8 +1,7 @@
 import * as ApiManager from "../../utils/apiManager"
 
 export default {
-
-  demo1: (params) => {
+  fetchOMDB: (params) => {
     return ApiManager.api(params)
   }
 }

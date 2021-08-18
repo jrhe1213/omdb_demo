@@ -1,26 +1,35 @@
-import { call, put, takeLatest, select } from "redux-saga/effects"
+import { 
+  call, 
+  put, 
+  takeLatest, 
+  // select, 
+} from "redux-saga/effects"
 
 import api from "./api"
 import actions from "./actions"
 import constants from "./constants"
-import * as selectors from "./selectors"
+// import * as selectors from "./selectors"
 
-function* demoSaga(action) {
+function* fetchOMDBSaga(action) {
   try {
     const params = {
-      t: "Toronto"
+      "s": action.payload.input || "marvel"
     }
-    const response = yield call(api.demo1, params)
-    if (response) {
-      yield put(actions.demo1Success(response))
+    const response = yield call(api.fetchOMDB, params)
+    if (response.Data) {
+      if (response.Data.Response == "True") {
+        yield put(actions.fetchOMDBSuccess(response.Data.Search))
+      } else {
+        yield put(actions.fetchOMDBSuccess([]))
+      }
     } else {
-      yield put(actions.demo1Error(response))
+      yield put(actions.fetchOMDBError(response.Message))
     }
   } catch (err) {
-    yield put(actions.demo1Error(err))
+    yield put(actions.fetchOMDBError(err))
   }
 }
 
 export function* HomePageSaga() {
-  yield takeLatest(constants.DEMO_1, demoSaga)
+  yield takeLatest(constants.FETCH_OMDB, fetchOMDBSaga)
 }

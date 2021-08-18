@@ -1,25 +1,24 @@
 import constants from "./constants"
 
 export default {
-
-  demo1: input => ({
-    type: constants.DEMO_1,
+  fetchOMDB: input => ({
+    type: constants.FETCH_OMDB,
     payload: {
-    
+      input
     }
   }),
 
-  demo1Success: res => ({
-    type: constants.DEMO_1__SUCCESS,
+  fetchOMDBSuccess: res => ({
+    type: constants.FETCH_OMDB__SUCCESS,
     payload: {
-    
+      response: res
     }
   }),
 
-  demo1Error: error => ({
-    type: constants.DEMO_1__ERROR,
+  fetchOMDBError: error => ({
+    type: constants.FETCH_OMDB__ERROR,
     payload: {
-    
+      error
     }
   }),
 }
