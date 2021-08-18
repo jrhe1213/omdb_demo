@@ -12,21 +12,21 @@ notes:
 1. I used redux here, but for something small, we can use context api as well
 2. not using TS here
 3. no es linter here
-4. I put everything in one compnent, b/c it's just demo
-4.1 usually i have a stucture to split the page
-4.2 layout & container & presentation
-4.2.1 layout is the component wrapper everything
-4.2.2 container is where I call api
-4.2.3 presentation is the pure UI component
+4. I put everything in one compnent, b/c it's just demo<br/>
+&nbsp;1. usually i have a stucture to split the page<br/>
+&nbsp;2. layout & container & presentation<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. layout is the component wrapper everything<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. container is where I call api<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. presentation is the pure UI component<br/>
 
 to-do:
 1. pagination
 2. SSR
 3. code split
 4. lazy loading
-5. style component
-5.1 using style-components
-5.2 or scss & webpack compiler
-7. simple vaildation
-7.1 usually i do with UI-Library, such as: material/ant/Semantic...
-7.2 OR own UI repo
+5. style component<br/>
+&nbsp;1. using style-components<br/>
+&nbsp;2. or scss & webpack compiler<br/>
+6. simple vaildation<br/>
+&nbsp;1. usually i do with UI-Library, such as: material/ant/Semantic...<br/>
+&nbsp;2. OR own UI repo<br/>
