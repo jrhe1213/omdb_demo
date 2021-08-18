@@ -7,9 +7,17 @@ import * as selectors from "./selectors"
 
 function* demoSaga(action) {
   try {
-
+    const params = {
+      t: "Toronto"
+    }
+    const response = yield call(api.demo1, params)
+    if (response) {
+      yield put(actions.demo1Success(response))
+    } else {
+      yield put(actions.demo1Error(response))
+    }
   } catch (err) {
-
+    yield put(actions.demo1Error(err))
   }
 }
 

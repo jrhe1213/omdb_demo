@@ -4,7 +4,7 @@ import axios from "axios"
 // config
 import * as config from "../config";
 
-export const api = (params) => {
+export const api = (url, params) => {
   return new Promise((resolve, reject) => {
     let headers = {
       "Accept": "application/json",

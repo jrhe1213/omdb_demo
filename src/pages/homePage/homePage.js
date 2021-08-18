@@ -1,10 +1,16 @@
-function HomePage() {
-    return (
-      <div>
-        HomePage
-      </div>
-    );
+const HomePage = () => {
+
+  const handleClick = () => {
+    console.log("hit here")
   }
-  
-  export default HomePage;
-  
+
+  return (
+    <div>
+      <a
+        onClick={() => handleClick()}
+      >search</a>
+    </div>
+  );
+}
+
+export default HomePage
