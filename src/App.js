@@ -2,7 +2,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 // pages
-import HomePage from './pages/homePage/homePage'
+// import HomePage from './pages/homePage/homePage'
+import HomePage from './pages/homePage/homePage_v2'
 import DetailPage from './pages/detailPage/detailPage'
 import NotFound from './pages/errorPage/notFound'
 
